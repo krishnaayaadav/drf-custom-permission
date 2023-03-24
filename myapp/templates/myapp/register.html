@@ -1,0 +1,51 @@
+{% extends 'myapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+User Registeration
+{% endblock title %}
+
+{% block content %}
+
+<div>
+   <form method='post' novalidate>
+      {% csrf_token %}
+      <!--- name field here----->
+      {{form.name.label_tag}} <!-- label of name field--->
+      {{form.name}}           <!-- input field  of name --->
+      
+      {% if form.name.errors %}
+        {{form.name.errors}}    <!-- name field errrors --->
+      {% endif %}
+
+      <!--- age field here----->
+
+      {{form.age.label_tag}} <!-- label of name field--->
+      {{form.age}}           <!-- input field  of name --->
+      
+      {% if form.age.errors %}
+        {{form.age.errors}}    <!-- name field errrors --->
+      {% endif %}
+
+      {{form.email.label_tag}} <!-- label of name field--->
+      {{form.email}}           <!-- input field  of name --->
+      
+      {% if form.email.errors %}
+        {{form.email.errors}}    <!-- name field errrors --->
+      {% endif %}
+
+      {{form.address.label_tag}} <!-- label of name field--->
+      {{form.address}}           <!-- input field  of name --->
+      
+      {% if form.address.errors %}
+        {{form.address.errors}}    <!-- name field errrors --->
+      {% endif %}
+
+      <input type='submit' value='Register Now'>
+   </form>
+</div>
+
+
+
+{% endblock content %}

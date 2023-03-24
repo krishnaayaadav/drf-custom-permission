@@ -1,0 +1,16 @@
+{
+   "search.defaultViewMode": "tree",
+   "debug.allowBreakpointsEverywhere": true,
+   "mergeEditor.diffAlgorithm": "smart",
+   "python.analysis.completeFunctionParens": true,
+   "python.analysis.diagnosticMode": "openFilesOnly",
+   "python.analysis.inlayHints.variableTypes": false,
+   "editor.accessibilityPageSize": 21,
+   "python.analysis.extraCommitChars": false,
+   "python.analysis.indexing": false,
+   "editor.cursorSmoothCaretAnimation": "on",
+   "editor.cursorStyle": "block",
+   "editor.cursorSurroundingLines": 3,
+   "editor.cursorSurroundingLinesStyle": "all",
+   "editor.fontSize": 22
+}

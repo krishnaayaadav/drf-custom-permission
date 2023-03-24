@@ -1,0 +1,40 @@
+{% extends 'myapp/base.html' %}
+
+{% load static %}
+
+{% block title %}
+User Registeration
+{% endblock title %}
+
+{% block content %}
+
+ 
+<div>
+   <form method='post' novalidate>
+    <h2> User Registeration Form</h2>
+      {% csrf_token %}
+
+       {% for field in form %}
+         {{field.label_tag}} <!-- input fields label name one by one--->
+         {{field}}            <!------input field ------>
+
+         {% if field.errors %}
+           <p>{{field.errors}}</p>     <!--- field errors  ---->
+         {% endif %}
+
+         <br> 
+         <br> 
+       
+       {% endfor %}
+      
+      <input type='submit' value='Register Now'>
+   </form>
+   <br> 
+
+<button><a href="{% url 'homepage' %}">Go to homepage</a>
+
+</div>
+
+
+
+{% endblock content %}

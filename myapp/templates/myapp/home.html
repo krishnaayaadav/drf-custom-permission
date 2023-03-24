@@ -1,0 +1,52 @@
+{% extends 'myapp/base.html' %}
+{% load static %}
+
+{% block title %} Homepage {% endblock title %}
+
+{% block content %}
+
+<h2>Welcome to Homepage
+
+</h2>
+<button><a href="{% url 'stu_registertion' %}">Add new data</a>
+
+   <table>
+      <!----thead here---->
+      <thead>
+         <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Email</th>
+            <th>Address</th>
+            <th>Actions</th>
+
+         </tr>
+      </thead>
+      <!----tbody here---->
+      
+      <tbody>
+
+
+
+         {% for student in all_students %}
+          
+            <tr>
+               <td>{{student.id}} </td>
+               <td>{{student.name}} </td>
+               <td>{{student.age}} </td>
+               <td>{{student.email}} </td>
+               <td>{{student.address}} </td>
+              
+               <!--Update and Delete Buttons here --->
+               <td> 
+                   <button><a href="{% url 'stu_updation' student.id %}">Update</a></button>
+                   <button><a href='{% url "detials_page" student.id %}' >Details Page</a></button>
+               </td>
+
+
+         {% endfor %}
+
+      </tbody>
+   </table>
+{% endblock content %}
